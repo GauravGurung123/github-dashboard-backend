@@ -1,0 +1,11 @@
+Django==5.2.7
+djangorestframework==3.16.1
+pymongo==4.15.3
+psycopg2-binary==2.9.11
+social-auth-app-django==5.6.0
+python-decouple==3.8
+requests==2.32.5
+django-cors-headers==4.9.0
+PyJWT==2.10.1
+python-dateutil==2.9.0
+gunicorn==23.0.0

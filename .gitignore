@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*$py.class
+*.so
+.Python
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Virtual environment files (optional)
+.venv/
+venv/
+env/
+ENV/
+*.env
+*.venv
+*.egg-info/
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database / media (optional)
+*.sqlite3
+/media/
+
+# Django migrations (optional to ignore)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Log files
+*.log
+db.sqlite3
+media/
+
+# Static files (optional)
+staticfiles/
+
+# Coverage and test
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# MongoDB
+*.bson
+*.lock
