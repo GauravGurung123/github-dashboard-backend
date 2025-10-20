@@ -15,9 +15,9 @@ class DashboardService:
 
     def __init__(self, access_token: str):
         self.github_client = GitHubClient(access_token)
+        self.adapter = GitHubAPIAdapter()
         self.contributor_repo = ContributorRepository()
         self.repo_repository = RepositoryRepository()
-        self.adapter = GitHubAPIAdapter()
 
     def sync_repository_data(self, owner: str, repo: str) -> Dict:
         """Fetch and sync repository data from GitHub"""
