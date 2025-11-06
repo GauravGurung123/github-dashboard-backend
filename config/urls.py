@@ -8,7 +8,9 @@ from django.urls import reverse_lazy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('social_django.urls', namespace='social')),
+    # path('auth/', include('social_django.urls', namespace='social')),
+    path('auth/', include('apps.authentication.urls')),  # Custom auth
+    path('social-auth/', include('social_django.urls', namespace='social')),  # GitHub OAuth
     path('api/', include('apps.dashboards.urls')),
     path('repositories', RedirectView.as_view(url=f'{settings.FRONTEND_URL.rstrip("/")}/repositories', permanent=False)),
     path('repositories/', RedirectView.as_view(url=f'{settings.FRONTEND_URL.rstrip("/")}/repositories', permanent=False)),
