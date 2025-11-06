@@ -5,8 +5,11 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import reverse_lazy
+from apps.authentication import views as auth_views
 
 urlpatterns = [
+    path('', auth_views.home_view, name='home'),  # Root URL
+
     path('admin/', admin.site.urls),
     # path('auth/', include('social_django.urls', namespace='social')),
     path('auth/', include('apps.authentication.urls')),  # Custom auth

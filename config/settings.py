@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'apps.repositories',
     'apps.contributors',
     'apps.dashboards',
+
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

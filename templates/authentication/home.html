@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Home - GitHub Dashboard{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+            <i class="fab fa-github text-6xl text-blue-600 mb-6"></i>
+            <h1 class="text-5xl font-bold text-gray-900 mb-4">
+                GitHub Projects Dashboard
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Visualize contributor metrics and project insights with beautiful dashboards. 
+                Track commits, issues, pull requests, and more.
+            </p>
+            
+            <div class="flex justify-center space-x-4">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-lg font-semibold">
+                        Go to Dashboard
+                    </a>
+                {% else %}
+                    <a href="{% url 'register' %}" class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-lg font-semibold">
+                        Get Started
+                    </a>
+                    <a href="{% url 'login' %}" class="px-8 py-3 bg-white text-blue-600 rounded-lg hover:bg-gray-50 transition text-lg font-semibold border-2 border-blue-600">
+                        Sign In
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <i class="fas fa-chart-line text-blue-600 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Analytics</h3>
+                <p class="text-gray-600">
+                    Comprehensive analytics for all your GitHub repositories with beautiful visualizations.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <i class="fas fa-users text-green-600 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Team Insights</h3>
+                <p class="text-gray-600">
+                    Track individual contributor performance and team collaboration metrics.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <i class="fas fa-lock text-purple-600 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Secure</h3>
+                <p class="text-gray-600">
+                    OAuth authentication and secure data handling for your peace of mind.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

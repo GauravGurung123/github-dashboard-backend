@@ -82,3 +82,7 @@ def profile_view(request):
     return render(request, 'authentication/profile.html', {
         'user': request.user
     })
+
+def home_view(request):
+    """Home page view"""
+    return render(request, 'authentication/home.html')
