@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Dashboard - GitHub Dashboard{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Welcome Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg shadow-lg p-8 mb-8">
+        <h1 class="text-3xl font-bold mb-2">Welcome back, {{ user.username }}!</h1>
+        <p class="text-blue-100">Here's your GitHub analytics dashboard</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <i class="fas fa-code-branch text-blue-600 text-2xl mr-3"></i>
+                    <h3 class="text-sm font-medium text-gray-600">Repositories</h3>
+                </div>
+            </div>
+            <p class="text-3xl font-bold text-gray-900">0</p>
+            <p class="text-sm text-gray-500 mt-1">Total repositories</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <i class="fas fa-code-commit text-green-600 text-2xl mr-3"></i>
+                    <h3 class="text-sm font-medium text-gray-600">Commits</h3>
+                </div>
+            </div>
+            <p class="text-3xl font-bold text-gray-900">0</p>
+            <p class="text-sm text-gray-500 mt-1">Total commits</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-circle text-yellow-600 text-2xl mr-3"></i>
+                    <h3 class="text-sm font-medium text-gray-600">Issues</h3>
+                </div>
+            </div>
+            <p class="text-3xl font-bold text-gray-900">0</p>
+            <p class="text-sm text-gray-500 mt-1">Open issues</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <i class="fas fa-code-pull-request text-purple-600 text-2xl mr-3"></i>
+                    <h3 class="text-sm font-medium text-gray-600">Pull Requests</h3>
+                </div>
+            </div>
+            <p class="text-3xl font-bold text-gray-900">0</p>
+            <p class="text-sm text-gray-500 mt-1">Active PRs</p>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Quick Actions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="#" class="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:bg-blue-50 transition">
+                <i class="fas fa-plus-circle text-blue-600 text-2xl mr-3"></i>
+                <div>
+                    <h3 class="font-semibold text-gray-900">Connect Repository</h3>
+                    <p class="text-sm text-gray-600">Add a GitHub repository</p>
+                </div>
+            </a>
+
+            <a href="{% url 'profile' %}" class="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-green-600 hover:bg-green-50 transition">
+                <i class="fas fa-user-circle text-green-600 text-2xl mr-3"></i>
+                <div>
+                    <h3 class="font-semibold text-gray-900">View Profile</h3>
+                    <p class="text-sm text-gray-600">Manage your account</p>
+                </div>
+            </a>
+
+            <a href="/social-auth/login/github/" class="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-purple-600 hover:bg-purple-50 transition">
+                <i class="fab fa-github text-purple-600 text-2xl mr-3"></i>
+                <div>
+                    <h3 class="font-semibold text-gray-900">Connect GitHub</h3>
+                    <p class="text-sm text-gray-600">Link GitHub account</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
