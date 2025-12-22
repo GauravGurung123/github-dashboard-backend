@@ -1,0 +1,31 @@
+
+# Database configuration
+ENGINE=django.db.backends.postgresql
+NAME=py_hub
+DB_USER=root
+PASSWORD=
+HOST=localhost
+PORT=5432
+
+# GitHub OAuth credentials
+GITHUB_URL=https://github.com/login/oauth/authorize
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+GITHUB_REDIRECT_URI=http://localhost:8000/api/auth/github/callback/
+
+# filestorage
+# minio storage
+MINIO_ENDPOINT_URL=http://127.0.0.1:9000
+MINIO_ACCESS_KEY=
+MINIO_SECRET_KEY=
+MINIO_BUCKET=
+MINIO_REGION=us-east-1
+MINIO_SSL_MODE=false
+DEFAULT_STORAGE=minio
+
+
+# Log Rotation
+LOG_ROTATION=True
+LOG_ROTATION_WHEN=midnight
+LOG_BACKUP_COUNT=7
+DEBUG_FILE=storage/logs/django.log
