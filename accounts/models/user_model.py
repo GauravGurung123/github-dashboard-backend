@@ -4,7 +4,6 @@ from django.conf import settings
 
 from accounts.models import GithubAccount
 
-
 # Create your models here.
 class ActiveManger(models.Manager):
     def get_queryset(self):
